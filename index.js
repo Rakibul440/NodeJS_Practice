@@ -14,12 +14,13 @@ const server = http.createServer((req,res)=>{
     if(url==='/sms' && method === 'POST'){
         res.setHeader('Location','/');
         res.statusCode=302;   ////For Redirecting An Webpage
-        // res.write("<html>");
-        // res.write("<head><title>Node Js</title></head>");
-        // res.write('<body><h1>Hey Rakibul</h1></body>');
-        // res.write("</html>");
         return res.end();
     }
+    res.write("<html>");
+    res.write("<head><title>Node Js</title></head>");
+    res.write('<body><h1>Hey Rakibul</h1></body>');
+    res.write("</html>");
+    res.end();
 });
 
 server.listen(3000);
